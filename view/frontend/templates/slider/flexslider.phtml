@@ -111,7 +111,13 @@ $bannerCollection = $block->getBannerCollection();
                     ?>
                     <li>
                         <a href="<?php echo $banner->getClickUrl() ?>" target="<?php echo $banner->getTargetValue() ?>" style="display:block;" data-mage-init='{"magestore/clickbanner": {"url": "<?php echo $this->getUrl("bannerslider/index/click") ?>", "slider_id": "<?php echo $banner->getSliderId() ?>", "banner_id": "<?php echo $banner->getId() ?>" }}' >
-                        <img alt="<?php echo $banner->getImageAlt() ?>"  src="<?php echo $block->getBannerImageUrl($banner) ?>"/>
+	                        <figure>
+		                        <img alt="<?php echo $banner->getImageAlt() ?>"  src="<?php echo $block->getBannerImageUrl($banner) ?>"/>
+								<figcaption>
+									<h3><?php echo $banner->getName() ?></h3>
+			                        <p><?php echo $banner->getImageAlt() ?></p>
+								</figcaption>
+	                        </figure>
                         </a>
                     </li>
                     <?php endif; ?>
