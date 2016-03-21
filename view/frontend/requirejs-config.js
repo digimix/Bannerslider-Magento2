@@ -8,11 +8,15 @@ var config = {
 	},
 	paths: {
 		'magestore/flexslider': 'Magestore_Bannerslider/js/jquery/slider/jquery-flexslider-min',
+		'magestore/flickity': 'Magestore_Bannerslider/js/jquery/slider/jquery-flickity-min',
 		'magestore/evolutionslider': 'Magestore_Bannerslider/js/jquery/slider/jquery-slider-min',
 		'magestore/popup': 'Magestore_Bannerslider/js/jquery.bpopup.min',
 	},
 	shim: {
 		'magestore/flexslider': {
+			deps: ['jquery']
+		},
+		'magestore/flickity': {
 			deps: ['jquery']
 		},
 		'magestore/evolutionslider': {

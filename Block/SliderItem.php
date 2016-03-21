@@ -55,6 +55,11 @@ class SliderItem extends \Magento\Framework\View\Element\Template
     const STYLESLIDE_FLEXSLIDER_TEMPLATE = 'Magestore_Bannerslider::slider/flexslider.phtml';
 
     /**
+     * template for flex slider.
+     */
+    const STYLESLIDE_FLICKITY_TEMPLATE = 'Magestore_Bannerslider::slider/flickity.phtml';
+
+    /**
      * template for custom slider.
      */
     const STYLESLIDE_CUSTOM_TEMPLATE = 'Magestore_Bannerslider::slider/custom.phtml';
@@ -222,6 +227,10 @@ class SliderItem extends \Magento\Framework\View\Element\Template
             //Note all page
             case SliderModel::STYLESLIDE_SPECIAL_NOTE:
                 $this->setTemplate(self::STYLESLIDE_SPECIAL_NOTE_TEMPLATE);
+                break;
+            //Flickity slide
+            case SliderModel::STYLESLIDE_FLICKITY_ONE:
+                $this->setTemplate(self::STYLESLIDE_FLICKITY_TEMPLATE);
                 break;
 
             // Flex slide
