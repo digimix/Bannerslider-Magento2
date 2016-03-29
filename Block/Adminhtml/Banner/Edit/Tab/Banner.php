@@ -254,9 +254,8 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
             ]
         );
 
-        $dateFormat = $this->_localeDate->getDateFormat(\IntlDateFormatter::SHORT);
-        $timeFormat = $this->_localeDate->getTimeFormat(\IntlDateFormatter::SHORT);
-
+        $dateFormat = 'M/d/yyyy';
+        $timeFormat = 'h:mm a';
         if($dataObj->hasData('start_time')) {
             $datetime = new \DateTime($dataObj->getData('start_time'));
             $dataObj->setData('start_time', $datetime->setTimezone(new \DateTimeZone($this->_localeDate->getConfigTimezone())));
@@ -281,7 +280,7 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
                 'class' => 'required-entry',
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
-                'note' => $this->_localeDate->getDateTimeFormat(\IntlDateFormatter::SHORT),
+                'note' => implode(' ', [$dateFormat, $timeFormat])
             ]
         );
 
@@ -298,7 +297,7 @@ class Banner extends \Magento\Backend\Block\Widget\Form\Generic implements \Mage
                 'class' => 'required-entry',
                 'date_format' => $dateFormat,
                 'time_format' => $timeFormat,
-                'note' => $this->_localeDate->getDateTimeFormat(\IntlDateFormatter::SHORT)
+                'note' => implode(' ', [$dateFormat, $timeFormat])
             ]
         );
 
